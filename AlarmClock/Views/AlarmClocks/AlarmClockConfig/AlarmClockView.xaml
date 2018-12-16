@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="AlarmClock.Views.AlarmClocks.AlarmClockConfig.AlarmClockView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Tools="clr-namespace:AlarmClock.Tools"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="Converter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="1" Grid.Column="1" Content="Годин" Width="200" HorizontalAlignment="Left" Foreground="Black"></Label>
+        <Label Grid.Row="1" Grid.Column="3" Content="Хвилин" Width="200" HorizontalAlignment="Left" Foreground="Black"></Label>
+        <ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Hours}" SelectedItem="{Binding SelectedHour}">
+        </ComboBox>
+        <ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="3" ItemsSource="{Binding Minutes}" SelectedItem="{Binding SelectedMinute}">
+        </ComboBox>
+        <Button Command="{ Binding SaveNewTime }" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Content="Save"></Button>
+        <Button Command="{ Binding Snooze }" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Content="Snooze" Visibility="{Binding Path=IsAlarming, Converter={StaticResource Converter}}"></Button>
+        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Content="Дзінь-Дзінь-Дзінь" HorizontalAlignment="Center" Foreground="Red" Visibility="{Binding Path=IsAlarming, Converter={StaticResource Converter}}"></Label>
+    </Grid>
+</UserControl>
