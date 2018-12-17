@@ -10,7 +10,7 @@ namespace Managers
     public class DBManager
     {
 
-        public static void CreateNewUser(User user)
+        public static void CreateNewUser(LabUser user)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -19,7 +19,7 @@ namespace Managers
             }
         }
 
-        public static User GetUserByLogin(string login)
+        public static LabUser GetUserByLogin(string login)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -30,7 +30,7 @@ namespace Managers
             }
         }
 
-        public static void UpdateLoggedInDateToCurrent(User user)
+        public static void UpdateLoggedInDateToCurrent(LabUser user)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -43,7 +43,7 @@ namespace Managers
             }
         }
 
-        public static void WriteQueryForUser(User user, string dirPath)
+        public static void WriteQueryForUser(LabUser user, string dirPath)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -57,7 +57,7 @@ namespace Managers
             }
         }
 
-        public static IEnumerable<Query> GetQueriesForUser(User user)
+        public static IEnumerable<Query> GetQueriesForUser(LabUser user)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -66,7 +66,6 @@ namespace Managers
                                   select q;
                 return queryResult.AsEnumerable().ToList();
             }
-
         }
     }
 }

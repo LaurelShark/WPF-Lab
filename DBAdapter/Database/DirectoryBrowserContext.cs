@@ -10,7 +10,7 @@ namespace DBAdapter.Database
 {
     public class DirectoryBrowserContext : DbContext
     {
-        public DirectoryBrowserContext() : base("DFBBase")
+        public DirectoryBrowserContext() : base("NewDB")
         {
             System.Data.Entity.Database.SetInitializer(new MigrateDatabaseToLatestVersion<DirectoryBrowserContext, DBAdapter.Migrations.Configuration>());
         }
@@ -19,14 +19,14 @@ namespace DBAdapter.Database
             //Adds configurations for Student from separate class
             modelBuilder.Configurations.Add(new UserConfiguration());
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<LabUser>()
                 .ToTable("UsersTable");
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<LabUser>()
                 .MapToStoredProcedures();
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<LabUser> Users { get; set; }
         public DbSet<Query> Queries { get; set; }
     }
 }

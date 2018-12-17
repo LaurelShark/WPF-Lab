@@ -15,7 +15,7 @@ namespace DBAdapter
             }
         }
 
-        public static User GetUserByLogin(string login)
+        public static LabUser GetUserByLogin(string login)
         {
             using (var context = new DirectoryBrowserContext())
             {
@@ -23,7 +23,7 @@ namespace DBAdapter
             }
         }
 
-        public static void AddUser(User user)
+        public static void AddUser(LabUser user)
         {
             using (var context = new DirectoryBrowserContext())
             {

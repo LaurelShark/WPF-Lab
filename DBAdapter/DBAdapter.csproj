@@ -61,15 +61,15 @@
     <Compile Include="Database\DirectoryFileBrowserDBInitializer.cs" />
     <Compile Include="Database\UserConfiguration.cs" />
     <Compile Include="EntityWrapper.cs" />
-    <Compile Include="Migrations\201811250233154_InitialCreate.cs" />
-    <Compile Include="Migrations\201811250233154_InitialCreate.Designer.cs">
-      <DependentUpon>201811250233154_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201812170118136_lab.cs" />
+    <Compile Include="Migrations\201812170118136_lab.Designer.cs">
+      <DependentUpon>201812170118136_lab.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811250233154_InitialCreate.resx">
-      <DependentUpon>201811250233154_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812170118136_lab.resx">
+      <DependentUpon>201812170118136_lab.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,7 +15,7 @@ namespace AlarmClockServiceInterface
             }
         }
 
-        public static User GetUserByLogin(string login)
+        public static LabUser GetUserByLogin(string login)
         {
             using (var myChannelFactory = new ChannelFactory<IAlarmClockContract>("Server"))
             {
@@ -24,7 +24,7 @@ namespace AlarmClockServiceInterface
             }
         }
 
-        public static void AddUser(User user)
+        public static void AddUser(LabUser user)
         {
             using (var myChannelFactory = new ChannelFactory<IAlarmClockContract>("Server"))
             {

@@ -9,7 +9,7 @@ namespace DBAdapter.Database
     {
         protected override void Seed(DirectoryBrowserContext context)
         {
-            IList<User> users = new List<User>();
+            IList<LabUser> users = new List<LabUser>();
             base.Seed(context);
         }
     }

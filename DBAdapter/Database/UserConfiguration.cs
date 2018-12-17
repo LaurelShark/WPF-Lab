@@ -3,7 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace DBAdapter.Database
 {
-    class UserConfiguration : EntityTypeConfiguration<User>
+    class UserConfiguration : EntityTypeConfiguration<LabUser>
     {
         public UserConfiguration()
         {

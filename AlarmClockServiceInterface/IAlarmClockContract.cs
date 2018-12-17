@@ -9,9 +9,9 @@ namespace AlarmClockServiceInterface
         [OperationContract]
         bool UserExists(string login);
         [OperationContract]
-        User GetUserByLogin(string login);
+        LabUser GetUserByLogin(string login);
         [OperationContract]
-        void AddUser(User user);
+        void AddUser(LabUser user);
         [OperationContract]
         void AddQuery(Query query);
         [OperationContract]

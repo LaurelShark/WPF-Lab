@@ -10,7 +10,7 @@ namespace DBModels.Models
     {
         #region Fields
         private int userId;
-        private User user;
+        private LabUser user;
         private int id;
         private string path;
         private DateTime date;
@@ -22,7 +22,7 @@ namespace DBModels.Models
             get { return userId; }
             set { userId = value; }
         }
-        public User User
+        public LabUser User
         {
             get { return user; }
             internal set { user = value; }

@@ -79,7 +79,7 @@ namespace AlarmClock.ViewModels.Authentication
             LoaderManager.Instance.ShowLoader();
             var res = await Task.Run(() =>
             {
-                User currUser;
+                LabUser currUser;
                 try
                 {
                     currUser = DBManager.GetUserByLogin(_login);

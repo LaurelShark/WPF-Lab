@@ -1,12 +1,17 @@
 namespace DBAdapter.Migrations
 {
+    using DBAdapter.Database;
+    using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DBAdapter.Database.DirectoryBrowserContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DirectoryBrowserContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+
         }
 
         protected override void Seed(DBAdapter.Database.DirectoryBrowserContext context)

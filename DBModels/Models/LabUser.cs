@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Windows.Forms;
 using Tools;
 
 namespace DBModels.Models
 {
     [Serializable]
-    public class User
+    [Table("UsersTable")]
+    public class LabUser
     {
 
         #region Fields
-        private int userId;
+        
+        public int userId;
         private string name;
         private string surname;
         private string _login;
@@ -22,6 +26,7 @@ namespace DBModels.Models
 
 
         #region Properties
+        [Key]
         public int UserId
         {
             get
@@ -108,7 +113,7 @@ namespace DBModels.Models
         }
         #endregion
 
-        public User(string firstName, string lastName, string email, string login, string password) : this()
+        public LabUser(string firstName, string lastName, string email, string login, string password) : this()
         {
             name = firstName;
             surname = lastName;
@@ -133,7 +138,7 @@ namespace DBModels.Models
             }
         }
 
-        public bool CheckPassword(User userCandidate)
+        public bool CheckPassword(LabUser userCandidate)
         {
             try
             {
@@ -145,7 +150,7 @@ namespace DBModels.Models
             }
         }
 
-        internal User()
+        internal LabUser()
         {
             LastLoginDate = DateTime.Now;
         }

@@ -10,12 +10,12 @@ namespace AlarmClockService
             return EntityWrapper.UserExists(login);
         }
 
-        public User GetUserByLogin(string login)
+        public LabUser GetUserByLogin(string login)
         {
             return EntityWrapper.GetUserByLogin(login);
         }
 
-        public void AddUser(User user)
+        public void AddUser(LabUser user)
         {
             EntityWrapper.AddUser(user);
         }

@@ -12,11 +12,11 @@ namespace Managers
     public class SessionManager
     {
         #region Fields
-        private static User user;
+        private static LabUser user;
         #endregion
 
         #region Properties
-        public static User User
+        public static LabUser User
         {
             get { return user; }
             set { user = value; }
@@ -27,7 +27,7 @@ namespace Managers
         {
             try
             {
-                User = SerializationManager.Deserialize<User>(FileFolderHelper.LastUserFilePath);
+                User = SerializationManager.Deserialize<LabUser>(FileFolderHelper.LastUserFilePath);
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace Managers
         {
             try
             {
-                SerializationManager.Serialize<User>(User, FileFolderHelper.LastUserFilePath);
+                SerializationManager.Serialize<LabUser>(User, FileFolderHelper.LastUserFilePath);
                 Logger.Log("User was serialized");
             }
             catch (Exception ex)

@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="AlarmClock.cs" />
     <Compile Include="Models\Query.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\LabUser.cs" />
     <Compile Include="Models\ViewableQuery.cs" />
     <Compile Include="User1.cs" />
   </ItemGroup>

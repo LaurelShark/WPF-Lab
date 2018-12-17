@@ -124,7 +124,7 @@ namespace AlarmClock.ViewModels.Authentication
                 }
                 try
                 {
-                    var user = new User(_firstName, _lastName, _email, _login, _password);
+                    var user = new LabUser(_firstName, _lastName, _email, _login, _password);
                     DBManager.CreateNewUser(user);
                     SessionManager.User = user;
                 }
